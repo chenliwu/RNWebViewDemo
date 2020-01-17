@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, SafeAreaView} from 'react-native';
 import {WebView} from 'react-native-webview';
 
+import testHtmlPage from './testHtmlPage';
 
 const html = `
       <html>
@@ -34,7 +35,7 @@ export default class App extends Component {
         return (
             <SafeAreaView style={{flex: 1}}>
                 <WebView
-                    source={{html}}
+                    source={{html:testHtmlPage}}
                     onMessage={event => {
                         console.log("onMessage.event.nativeEvent", event.nativeEvent);
                         alert(event.nativeEvent.data);
